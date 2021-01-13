@@ -115,6 +115,8 @@ def main():
             continue
 
         encoder = videoEncoder.X265Encoder(filepath)
+        if args.subtitles:
+            encoder.subtitles = True
         if args.low_profile:
             encoder.low_profile = True
         if args.nvenc:

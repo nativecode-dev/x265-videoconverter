@@ -41,6 +41,7 @@ class X265Encoder:
             self.compatableContainer = False
             self.outputFilepath = self.filepathBase + ".mkv"
 
+        self.subtitles = False
         self.low_profile = False
         self.nvenc = False
         self.crf = 28
