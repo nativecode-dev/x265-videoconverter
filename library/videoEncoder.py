@@ -71,8 +71,8 @@ class X265Encoder:
         self.command = ["ffmpeg", "-n", "-hide_banner"]
         self.command += ["-i", self.backupFilepath]
 
+        self.externalSubtitles = self._subtitlePaths()
         if self.subtitles is True:
-            self.externalSubtitles = self._subtitlePaths()
             for subtitle in self.externalSubtitles:
                 self.command += ["-i", f'"{subtitle}"']
 
