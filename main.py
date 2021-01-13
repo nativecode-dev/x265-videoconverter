@@ -35,6 +35,7 @@ def main():
     parser.add_argument("--track", "-t", action="append", metavar="PATH", help="add a new path to be tracked")
     parser.add_argument("--saved-space", action="store_true", help="display HDD space saved by transcoding into x265")
     parser.add_argument("--scan", "-s", action="store_true", help="scan tracked directories for new files")
+    parser.add_argument("--subtitles", action="store_true", help="copy external subtitles")
     parser.add_argument("--quiet", "-q", action="store_true", help="only produce minimal output")
     parser.add_argument("--verbose", "-v", action="store_true", help="produce as much output as possible")
 
