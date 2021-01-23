@@ -45,5 +45,6 @@ Transcoded:
                             add a new path to be tracked
     --saved-space         display HDD space saved by transcoding into x265
     --scan, -s            scan tracked directories for new files
+    --subtitles           copy external subtitles
     --quiet, -q           only produce minimal output
     --verbose, -v         produce as much output as possible
