@@ -44,6 +44,7 @@ class X265Encoder:
         self.subtitles = False
         self.low_profile = False
         self.nvenc = False
+        self.vaapi = False
         self.crf = 28
         self.preset = "medium"
 
