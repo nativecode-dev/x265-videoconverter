@@ -179,6 +179,7 @@ class X265Encoder:
     def _mapVideoStreams(self):
         for stream in self.file.videoStreams:
             self.command += ["-map", f'0:{stream["index"]}']
+
         if self.nvenc:
             self.log.debug("GPU encoding used")
             self.command += ["-c:v", "hevc_nvenc"]
@@ -190,10 +191,7 @@ class X265Encoder:
             self.log.debug("GPU encoding used")
             self.command += ["-vaapi_device", "/dev/dri/renderD128"]
             self.command += ["-vf", "format=nv12,hwupload"]
-            self.command += ["-map", "0:0"]
             self.command += ["-c:v", "hevc_vaapi"]
-            self.command += ["-map", "0:a"]
-            self.command += ["-c:a", "copy"]
             self.command += ["-rc_mode", "CQP"]
         else:
             self.log.debug("CPU encoding used")
