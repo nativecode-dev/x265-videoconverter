@@ -28,7 +28,8 @@ def main():
     parser.add_argument("--list-paths", "-lp", action="store_true", help="list tracked paths")
     parser.add_argument("--low-profile", action="store_true", help="for weaker devices, convert to 4-bit HEVC including downgrading 10-bit hevc", default=False)
     parser.add_argument("--number", "-n", action="store", help="transcode from tracked paths limit number of files to be converted", type=int)
-    parser.add_argument("--nvenc", action="store_true", help="transcode using NVENC compatable GPU")
+    parser.add_argument("--nvenc", action="store_true", help="transcode using NVENC compatible GPU")
+    parser.add_argument("--vaapi", action="store_true", help="transcode using VAAPI compatible GPU")
     parser.add_argument("--preset", action="store", type=str, 
         help="string for ffmpeg paramater, accepts ultrafast, superfast, veryfast, faster, fast, medium, slow, slower,\
              veryslow and placebo, slower speeds have a higher filesize and better quality")

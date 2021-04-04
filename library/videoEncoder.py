@@ -186,6 +186,15 @@ class X265Encoder:
                 self.command += ["-pix_fmt", "yuv420p"]
             else:
                 self.command += ["-pix_fmt", "p010le"]
+        elif self.vaapi:
+            self.log.debug("GPU encoding used")
+            self.command += ["-vaapi_device", "/dev/dri/renderD128"]
+            self.command += ["-vf", "format=nv12,hwupload"]
+            self.command += ["-map", "0:0"]
+            self.command += ["-c:v", "hevc_vaapi"]
+            self.command += ["-map", "0:a"]
+            self.command += ["-c:a", "copy"]
+            self.command += ["-rc_mode", "CQP"]
         else:
             self.log.debug("CPU encoding used")
             self.command += ["-c:v", "libx265"]
